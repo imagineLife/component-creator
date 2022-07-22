@@ -1,0 +1,21 @@
+{
+  "name": "component-creator",
+  "version": "1.0.0",
+  "description": "Creating React Components",
+  "main": "index.js",
+  "scope": "@imaginelife",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imagineLife/component-creator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imagineLife/component-creator/issues"
+  },
+  "homepage": "https://github.com/imagineLife/component-creator#readme"
+}
