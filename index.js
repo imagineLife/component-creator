@@ -8,17 +8,12 @@ const startingQuestions = [
   },
 ];
 
-async function doWork() {
-  let initialAnswers = await inquirer.prompt(startingQuestions);
-  console.log({
-    initialAnswers,
-  });
+async function createTheComponent() {
+  let { componentName } = await inquirer.prompt(startingQuestions); 
+  const cased = componentName.charAt(0).toUpperCase() + componentName.slice(1);
+  console.log(`creating directory ${cased} in ${process.cwd()}`)
+  
   
 }
 
-doWork()
-
-// module.exports = {
-//   doWork
-// }
-// see "a-cli" for inquirer example
+createTheComponent();
