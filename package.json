@@ -11,11 +11,15 @@
     "type": "git",
     "url": "git+https://github.com/imagineLife/component-creator.git"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/imagineLife/component-creator/issues"
   },
-  "homepage": "https://github.com/imagineLife/component-creator#readme"
+  "homepage": "https://github.com/imagineLife/component-creator#readme",
+  "dependencies": {
+    "inquirer": "^9.0.2"
+  }
 }
