@@ -4,8 +4,6 @@ describe("componentIndexString", () => {
   it("works", () => {
     const res = componentIndexString({ componentName: "Water" });
     const lines = res.split("\n");
-    console.log("lines");
-    console.log(lines);
     const expectedLines = [
       "import React from 'react';",
       "const Water = () => (<p>Water</p>);",
