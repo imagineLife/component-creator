@@ -4,10 +4,13 @@
   "description": "Creating React Components",
   "main": "index.js",
   "scope": "@imaginelife",
-  "scripts": {
+   "engines": {
+        "node": ">=16.0.0"
+    },
+    "scripts": {
     "format:check": "prettier --check \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\" ",
     "format": "prettier --write \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\" ",
-    "test": "jest --coverage"
+    "test": "jest --coverage --verbose --maxWorkers=1"
   },
   "repository": {
     "type": "git",
