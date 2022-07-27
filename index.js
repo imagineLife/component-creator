@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
-const { capitalizeFirst } = require("./helpers");
+const { mkdir } = require("fs").promises;
+const { capitalizeFirst, createComponentDirPath } = require("./helpers");
 
 const startingQuestions = [
   {
@@ -10,11 +11,21 @@ const startingQuestions = [
 ];
 
 async function createComponent() {
-  const { componentName } = await inquirer.prompt(startingQuestions);
-  const formattedComponentName = capitalizeFirst(componentName);
-  console.log(
-    `${formattedComponentName} component directory wil be created in ${process.cwd()}`
-  );
+  try {
+    const { componentName } = await inquirer.prompt(startingQuestions);
+    const formattedComponentName = capitalizeFirst(componentName);
+    console.log(`Creating ${formattedComponentName} now...`);
+
+    const componentDirPath = createComponentDirPath({
+      componentName: formattedComponentName,
+      cwd: process.cwd(),
+    });
+
+    await mkdir(componentDirPath);
+  } catch (error) {
+    console.log("GLOBAL ERROR");
+    console.log(error.message);
+  }
 }
 
 // module.exports = createComponent;
