@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const { capitalizeFirst } = require("./helpers");
 
 const startingQuestions = [
   {
@@ -8,10 +9,13 @@ const startingQuestions = [
   },
 ];
 
-async function createTheComponent() {
+async function createComponent() {
   const { componentName } = await inquirer.prompt(startingQuestions);
-  const cased = componentName.charAt(0).toUpperCase() + componentName.slice(1);
-  console.log(`creating directory ${cased} in ${process.cwd()}`);
+  const formattedComponentName = capitalizeFirst(componentName);
+  console.log(
+    `${formattedComponentName} component directory wil be created in ${process.cwd()}`
+  );
 }
 
-createTheComponent();
+// module.exports = createComponent;
+createComponent();
